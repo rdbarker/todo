@@ -9,6 +9,10 @@ module.exports = {
             title: "ToDo",
         })
     ],
+    devtool: "inline-source-map",
+    devServer:{
+        static: './dist'
+    },
     output: {
         filename: "bundle.js",
         path: path.resolve(__dirname, "dist"),
