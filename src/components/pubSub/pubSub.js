@@ -7,7 +7,9 @@ const subscriptionService = () => {
     subs[topic].push(callBack);
   };
   const publish = (topic, data) => {
-    subs[topic].forEach((subCallBack) => subCallBack(data));
+    if (subs[topic]) {
+      subs[topic].forEach((subCallBack) => subCallBack(data));
+    }
   };
   const unsubscribe = (topic, callBack) => {
     const index = subs[topic].indexOf(callBack);
@@ -18,7 +20,7 @@ const subscriptionService = () => {
       delete subs[topic];
     }
   };
-  return { subscribe, publish, unsubscribe };
+  return { subscribe, publish, unsubscribe, subs };
 };
 
 export default subscriptionService;
