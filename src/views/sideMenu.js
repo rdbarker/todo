@@ -1,32 +1,11 @@
 import createElement from "./helpers/createElement";
+import sideMenuBottom from "./subViews/sideMenuBottom";
+import sideMenuTop from "./subViews/sideMenuTop";
 
 const sideMenu = (dataService) => {
-  const render = (list) => {
-    $projectsMenuContainer.innerText = "";
-    list.forEach((element) => {
-      const $element = createElement({
-        parent: $projectsMenuContainer,
-        inner: element,
-      });
-    });
-  };
-  let currentProjects = [];
-  dataService.subscribe("projects", render);
-  const $sidebarContainer = createElement({ parent: "#container" });
-  const $today = createElement({ parent: $sidebarContainer, inner: "Today" });
-  const $week = createElement({
-    parent: $sidebarContainer,
-    inner: "This Week",
-  });
-  const $month = createElement({
-    parent: $sidebarContainer,
-    inner: "This Month",
-  });
-  const $seperator = createElement({ parent: $sidebarContainer });
-  const $projectsMenuContainer = createElement({
-    parent: "#container",
-    id: "menucontainer",
-  });
+  const $parent = createElement({ parent: "#container", css: "side-menu" });
+  sideMenuTop($parent);
+  sideMenuBottom(dataService, $parent);
 };
 
 export default sideMenu;
