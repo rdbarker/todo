@@ -2,15 +2,47 @@ import Project from "./project";
 import Todo from "./todo";
 
 const dataController = () => {
-  let allTodos = [];
   let allProjects = [];
-  const createTodo = (obj) => {
-    console.log(obj);
+  let allTodos = [];
+
+  const createTodo = ({
+    title = "Blank Title",
+    dueDate,
+    prio = 1,
+    description,
+    notes,
+    completed = false,
+    checkList = [],
+    project,
+  } = {}) => {
+    const todo = new Todo({
+      title,
+      dueDate,
+      prio,
+      description,
+      notes,
+      completed,
+      checkList,
+      project,
+    });
+    allProjects.push(todo);
   };
-  const createProject = (obj) => {
-    console.log(obj);
+  const createProject = ({
+    title = "Blank Project",
+    description,
+    color = "gray",
+  } = {}) => {
+    const project = new Project({ title, description, color });
+    allProjects.push(project);
   };
-  return { createTodo, createProject };
+  const getAllProjectTitles = () => {
+    const titles = allProjects.map((value) => {
+      return value["title"];
+    });
+    return titles;
+  };
+
+  return { createTodo, createProject, getAllProjectTitles, createTodo };
 };
 
 export default dataController;
