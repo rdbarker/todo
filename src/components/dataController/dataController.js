@@ -1,10 +1,12 @@
 import Project from "./project";
 import Todo from "./todo";
 
-const dataController = () => {
+const dataController = (service) => {
   let allProjects = [];
   let allTodos = [];
-
+  const publishProjects = () => {
+    service.publish("projects", getAllProjectTitles());
+  };
   const createTodo = ({
     title = "Blank Title",
     dueDate,
@@ -34,6 +36,7 @@ const dataController = () => {
   } = {}) => {
     const project = new Project({ title, description, color });
     allProjects.push(project);
+    publishProjects();
   };
   const getAllProjectTitles = () => {
     const titles = allProjects.map((value) => {
