@@ -1,11 +1,11 @@
 import Project from "./project";
 import Todo from "./todo";
 
-const dataController = (service) => {
+const dataController = (dataService) => {
   let allProjects = [];
   let allTodos = [];
   const publishProjects = () => {
-    service.publish("projects", getAllProjectTitles());
+    dataService.publish("projectsUpdate", getAllProjectTitles());
   };
   const createTodo = ({
     title = "Blank Title",
@@ -39,12 +39,14 @@ const dataController = (service) => {
     publishProjects();
   };
   const getAllProjectTitles = () => {
-    const titles = allProjects.map((value) => {
-      return value["title"];
-    });
+    const titles = allProjects
+      .map((value) => {
+        return value["title"];
+      })
+      .sort();
     return titles;
   };
-
+  dataService.subscribe("createProject", createProject);
   return { createTodo, createProject, getAllProjectTitles, createTodo };
 };
 
