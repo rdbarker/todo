@@ -1,13 +1,14 @@
 class Todo {
   constructor({
-    title = "Blank Title",
+    title,
     dueDate,
-    prio = 1,
+    prio,
     description,
     notes,
-    completed = false,
-    checkList = [],
-  } = {}) {
+    completed,
+    checkList,
+    project,
+  }) {
     this.title = title;
     this.dueDate = dueDate;
     this.prio = prio;
@@ -15,6 +16,7 @@ class Todo {
     this.notes = notes;
     this.completed = completed;
     this.checkList = checkList;
+    this.project = project;
   }
 }
 
