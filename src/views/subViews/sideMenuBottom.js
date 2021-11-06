@@ -12,7 +12,7 @@ const sideMenuBottom = (dataService, parentContainer) => {
     });
   };
   let currentProjects = [];
-  dataService.subscribe("projects", render);
+  dataService.subscribe("projectsUpdate", render);
   const $parent = createElement({ tag: "ul", parent: parentContainer });
 };
 
