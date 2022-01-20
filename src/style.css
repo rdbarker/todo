@@ -1,0 +1,25 @@
+#add-modal {
+  display: none;
+}
+#add-modal:target {
+  display: block;
+}
+.modal-tabs {
+  display: flex;
+}
+label {
+  cursor: pointer;
+}
+.modal-tabs input[type="radio"] {
+  display: none;
+}
+.modal-tabs .modal-tab {
+  display: none;
+  order: 9;
+}
+.modal-tabs input[type="radio"]:checked + label {
+  background: rgb(148, 148, 148);
+}
+.modal-tabs input[type="radio"]:checked + label + .modal-tab {
+  display: block;
+}

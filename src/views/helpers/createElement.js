@@ -5,6 +5,7 @@ const createElement = ({
   css = "",
   src = "",
   id = "",
+  href = "",
   click,
 } = {}) => {
   const element = document.createElement(tag);
@@ -17,6 +18,9 @@ const createElement = ({
       element.appendChild(inner);
     }
   }
+  if (href) {
+    element.href = href;
+  }
   if (parent) {
     if (typeof parent === "string" || parent instanceof String) {
       document.querySelector(parent).appendChild(element);
@@ -26,9 +30,11 @@ const createElement = ({
   } else {
     document.querySelector("body").appendChild(element);
   }
+
   if (click) {
     element.addEventListener("click", click);
   }
+
   return element;
 };
 

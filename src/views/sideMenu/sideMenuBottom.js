@@ -1,4 +1,4 @@
-import createElement from "../helpers/createElement";
+import createElement from "../helpers/createElement.js";
 
 const sideMenuBottom = (dataService, parentContainer) => {
   const render = (list) => {

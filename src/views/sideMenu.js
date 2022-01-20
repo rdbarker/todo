@@ -1,6 +1,6 @@
-import createElement from "./helpers/createElement";
-import sideMenuBottom from "./subViews/sideMenuBottom";
-import sideMenuTop from "./subViews/sideMenuTop";
+import createElement from "./helpers/createElement.js";
+import sideMenuBottom from "./sideMenu/sideMenuBottom";
+import sideMenuTop from "./sideMenu/sideMenuTop";
 
 const sideMenu = (dataService) => {
   const addProject = () => {
@@ -9,9 +9,9 @@ const sideMenu = (dataService) => {
   const $parent = createElement({ parent: "#container", css: "side-menu" });
   const $addButton = createElement({
     parent: $parent,
-    tag: "button",
+    tag: "a",
     inner: "add",
-    click: addProject,
+    href: "#add-modal",
   });
   sideMenuTop($parent);
   sideMenuBottom(dataService, $parent);
