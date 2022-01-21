@@ -1,6 +1,6 @@
 html {
   box-sizing: border-box;
-  --grid-size: 12;
+  --grid-size: 6;
 }
 *,
 *::before,
@@ -83,4 +83,7 @@ footer {
 .span-12 {
   --span-width: calc(100% / var(--grid-size) * 12);
   flex: 12 0 var(--span-width);
+}
+.span-rest {
+  flex-grow: 100;
 }
