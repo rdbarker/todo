@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Noticia+Text:wght@700&display=swap");
+body {
+  background-color: rgb(58, 58, 58);
+}
+.row > * {
+  padding: 48px;
+}
+#menu {
+  height: 400px;
+  max-width: 400px;
+  background-color: rgb(241, 241, 233);
+  padding: 6px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+}
+#menu h2 {
+  font-family: "Noticia Text", serif;
+}

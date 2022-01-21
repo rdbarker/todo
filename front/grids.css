@@ -1,0 +1,86 @@
+html {
+  box-sizing: border-box;
+  --grid-size: 12;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-height: 100vh;
+}
+footer {
+  margin-top: auto;
+}
+.column {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.row {
+  display: flex;
+  flex-flow: row wrap;
+}
+.row *,
+.column * {
+  max-width: 100%;
+}
+.row.center,
+.column.center {
+  justify-content: center;
+}
+
+.row.center *,
+.column.center * {
+  flex-grow: 0;
+}
+.span-1 {
+  --span-width: calc(100% / var(--grid-size) * 1);
+  flex: 1 0 var(--span-width);
+}
+.span-2 {
+  --span-width: calc(100% / var(--grid-size) * 2);
+  flex: 2 0 var(--span-width);
+}
+.span-3 {
+  --span-width: calc(100% / var(--grid-size) * 3);
+  flex: 3 0 var(--span-width);
+}
+.span-4 {
+  --span-width: calc(100% / var(--grid-size) * 4);
+  flex: 4 0 var(--span-width);
+}
+.span-5 {
+  --span-width: calc(100% / var(--grid-size) * 5);
+  flex: 5 0 var(--span-width);
+}
+.span-6 {
+  --span-width: calc(100% / var(--grid-size) * 6);
+  flex: 6 0 var(--span-width);
+}
+.span-7 {
+  --span-width: calc(100% / var(--grid-size) * 7);
+  flex: 7 0 var(--span-width);
+}
+.span-8 {
+  --span-width: calc(100% / var(--grid-size) * 8);
+  flex: 8 0 var(--span-width);
+}
+.span-9 {
+  --span-width: calc(100% / var(--grid-size) * 9);
+  flex: 9 0 var(--span-width);
+}
+.span-10 {
+  --span-width: calc(100% / var(--grid-size) * 10);
+  flex: 10 0 var(--span-width);
+}
+.span-11 {
+  --span-width: calc(100% / var(--grid-size) * 11);
+  flex: 11 0 var(--span-width);
+}
+.span-12 {
+  --span-width: calc(100% / var(--grid-size) * 12);
+  flex: 12 0 var(--span-width);
+}
