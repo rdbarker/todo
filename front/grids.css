@@ -1,6 +1,7 @@
 html {
+  height: 100%;
   box-sizing: border-box;
-  --grid-size: 6;
+  --grid-size: 12;
 }
 *,
 *::before,
@@ -11,6 +12,7 @@ html {
 }
 body {
   min-height: 100vh;
+  height: 100%;
 }
 footer {
   margin-top: auto;
@@ -85,5 +87,5 @@ footer {
   flex: 12 0 var(--span-width);
 }
 .span-rest {
-  flex-grow: 100;
+  flex-grow: 1000;
 }
